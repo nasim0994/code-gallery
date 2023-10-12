@@ -138,7 +138,6 @@ h2 {
 .hero_wrap {
   background-image: url(/assets/images/hero/hero_bg.gif);
   width: 100%;
-  height: 95vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -214,7 +213,7 @@ h2 {
     font-size: 20px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     width: 100%;
   }
 

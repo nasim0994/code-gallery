@@ -1,11 +1,28 @@
 import Header from "../Header/Header";
+import { BiSearch } from "react-icons/bi";
 
 export default function Hero() {
   return (
-    <section className="hero_wrap">
+    <section className="hero_wrap h-[85vh] md:h-[95vh]">
       <Header />
 
-      <div className="container"></div>
+      <div className="container h-full z-20 relative">
+        <div className="h-full flex flex-col justify-center items-center gap-6 -mt-20">
+          <h2 className="text-4xl sm:text-7xl font-semibold">Learn to Code</h2>
+          <p className="sm:text-2xl">Largest web developer Blog site.</p>
+          <div className="relative">
+            <input
+              type="text"
+              className="sm:w-[500px] border outline-none pl-4 pr-11 py-2.5 text-[15px] rounded-md placeholder:font-light focus:border-primary focus:border text-neutral"
+              placeholder="Insert tracking ID to track your parcel"
+            />
+
+            <button className="absolute right-3 top-3 border-l pl-3">
+              <BiSearch className="text-primary text-xl" />
+            </button>
+          </div>
+        </div>
+      </div>
 
       <div className="absolute bottom-0 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
