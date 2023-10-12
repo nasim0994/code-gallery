@@ -31,7 +31,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="py-2">
+    <header className="py-2 z-50 relative">
       <div className="container">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-1">
