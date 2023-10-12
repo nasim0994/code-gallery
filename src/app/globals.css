@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -26,7 +26,7 @@ h2 {
 
 @media only screen and (min-width: 1200px) {
   .container {
-    max-width: 1110px !important;
+    max-width: 1180px !important;
   }
 }
 
@@ -39,6 +39,13 @@ h2 {
 
 .primary-btn-g:hover {
   background-image: linear-gradient(to right, #dc22ff, #7b83fe);
+}
+
+.text-gradient {
+  background: #7b83fe;
+  background: linear-gradient(to right, #7b83fe 0%, #dc22ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* --------------Loading CSS---------------------- */
@@ -124,5 +131,137 @@ h2 {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* -----------------hero_wrap------------- */
+.hero_wrap {
+  background-image: url(/assets/images/hero/hero_bg.gif);
+  width: 100%;
+  height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+
+/* --------------------Header------------------- */
+.main_menu ul li {
+  position: relative;
+}
+
+.main_menu ul li a {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+
+  transition: all 0.3s;
+}
+
+.main_menu ul li a:hover {
+  color: #7b83fe;
+}
+
+.mega_dropdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  background: #fff;
+  padding: 10px;
+  border-radius: 7px;
+  color: #4f4f50;
+
+  position: absolute;
+  right: 0;
+  width: max-content;
+
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: 50% 0;
+  transform: perspective(999px) rotateX(-10deg) translateZ(0)
+    translate3d(0, 0px, 0) !important;
+  will-change: transform, box-shadow;
+
+  transition: all 0.3s ease;
+}
+
+.mega_dropdown ul li a {
+  padding: 5px 10px;
+}
+
+.mega_dropdown_show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: perspective(999px) rotateX(0deg) translateZ(0)
+    translate3d(0, 10px, 0) !important;
+}
+.mobile_menu,
+.menu_close_btn {
+  display: none;
+}
+
+/* -------------Header Responsive-------------- */
+@media only screen and (max-width: 800px) {
+  .mobile_menu {
+    display: block;
+  }
+
+  .menu_close_btn {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
+
+  .main_menu {
+    position: fixed;
+    background: #fff;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    color: #4f4f50;
+    padding: 20px;
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+  }
+
+  .main_menu_show {
+    transform: translateX(0%);
+  }
+
+  .main_menu ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .main_menu ul li a {
+    font-size: 16px;
+    width: max-content;
+  }
+
+  .mega_dropdown {
+    grid-template-columns: repeat(1, 1fr);
+
+    padding: 0px;
+    gap: 0px;
+  }
+
+  .mega_dropdown {
+    height: 0px;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .mega_dropdown_show {
+    height: max-content;
   }
 }
